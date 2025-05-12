@@ -1,42 +1,647 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/niagara-solid");
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+	scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/******************** HEADER **********************/
+
+header {
+	width: 100vw;
+	height: 100px;
+	background-color: #242424;
+	display: none;
+	justify-content: space-between;
+	padding: 25px;
+	align-items: center;
+}
+
+header img {
+	height: 70px;
+	width: auto;
+}
+
+header ul {
+	display: flex;
+	gap: 16px;
+	margin-right: 14px;
+}
+
+header a {
+	font-family: "Montserrat", sans-serif;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+}
+
+.orange_ul {
+	color: #faa916;
+}
+@media screen and (max-width: 1550px) {
+	header {
+		height: 90px;
+		padding: 25px;
+	}
+	header img {
+		height: 65px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	header {
+		height: 75px;
+		padding: 25px;
+	}
+	header img {
+		height: 55px;
+	}
+	header a {
+		font-size: 14px;
+	}
+	header ul {
+		display: flex;
+		gap: 10px;
+		margin-right: 10px;
+	}
+}
+
+/************************ BANNIERE ************************/
+
+.banniere {
+	background-image: url("/border_white_bottom.png"),
+		url("/background_banniere.jpg");
+
+	background-position: bottom, center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 70px;
+}
+
+.banniere_img {
+	height: 9vw;
+	width: auto;
+}
+
+.bar_blanche {
+	width: 7px;
+	height: 600px;
+	background-color: white;
+}
+
+.ban_nom {
+	font-family: "Niagara Solid", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 18px;
+}
+
+.nom_ban {
+	font-size: 4.5vw;
+
+	line-height: .80em;
+	color: #faa916;
+}
+
+.met_ban {
+	font-size: 7vw;
+	line-height: .95em;
+	color: white;
+	text-align: center;
+}
+
+.ban_menu {
+	display: flex;
+	flex-direction: column;
+}
+
+.banniere a {
+	color: white;
+	font-family: "Niagara Solid", sans-serif;
+	text-decoration: none;
+	font-size: 8vw;
+	line-height: .99em;
+	transition: transform .3s ease-in-out, font-size .3s ease-in-out;
+}
+
+.banniere a:hover {
+	font-style: italic;
+	transform: translate(5px);
+}
+
+@media screen and (max-width: 1250px) {
+	.banniere {
+		width: 100%;
+		height: 60vw;
+		gap: 4vw;
+	}
+	.nom_ban {
+		font-size: 5vw;
+	}
+	.met_ban {
+		font-size: 8vw;
+	}
+
+	.bar_blanche {
+		height: 45vw;
+		width: .5vw;
+	}
+}
+@media screen and (max-width: 800px) {
+	.banniere {
+		width: 100%;
+		height: auto;
+		gap: 6vw;
+		flex-direction: column;
+		padding: 60px;
+		background-position: bottom, right;
+	}
+	.bar_blanche {
+		width: 70vw;
+		height: 4px;
+		background-color: white;
+	}
+	.nom_ban {
+		font-size: 9.5vw;
+	}
+	.met_ban {
+		font-size: 16vw;
+	}
+	.banniere a {
+		font-size: 16vw;
+		line-height: .95em;
+	}
+	.banniere_img {
+		height: 20vw;
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.banniere {
+		padding: 40px;
+	}
+}
+
+/******************* A PROPOS *******************************/
+
+.a_propos {
+	width: 100%;
+	height: auto;
+	background-color: white;
+	padding: 5vw 12vw;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.propos_title {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	justify-content: space-between;
+}
+
+.a_propos hr {
+	height: 4px;
+	width: 29vw;
+	background-color: #faa916;
+	border-style: none;
+}
+
+.a_propos h1 {
+	font-family: "Niagara Solid", sans-serif;
+	font-size: 5vw;
+	color: #faa916;
+	font-weight: 400;
+}
+
+.propos_int {
+	display: flex;
+	align-items: center;
+	height: auto;
+	gap: 30px;
+}
+.moi_orange {
+	width: auto;
+	height: 250px;
+	object-fit: cover;
+}
+
+.a_propos p {
+	font-family: "Montserrat", sans-serif;
+
+	font-size: 15px;
+	text-align: justify;
+}
+
+.graphic_orange {
+	height: 30px;
+	width: auto;
+	margin: 0 50%;
+}
+@media screen and (max-width: 1500px) {
+	.propos_int {
+		align-items: flex-start;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.a_propos p {
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 800px) {
+	.propos_title {
+		gap: 2vw;
+	}
+	.a_propos h1 {
+		font-size: 7vw;
+	}
+	.propos_int {
+		flex-direction: column;
+	}
+	.moi_orange {
+		width: 100%;
+		height: 150px;
+		object-position: -50% 28%;
+	}
+	.a_propos hr {
+		width: 24vw;
+	}
+}
+@media screen and (max-width: 700px) {
+	.a_propos h1 {
+		font-size: 10vw;
+	}
+}
+
+/****************PROJETS********************/
+
+.projets {
+	background-image: url("/border_white_top.png"),
+		url("/border_white_bottom.png"), url("/background_projet.jpg");
+
+	background-position: top, bottom, center;
+	background-repeat: no-repeat, no-repeat, repeat;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 55px;
+	padding: 8vw 15vw;
+}
+
+/*  */
+
+.projets_title {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	justify-content: space-between;
+}
+
+.projets_title hr {
+	height: 4px;
+	width: 28vw;
+	background-color: #faa916;
+	border-style: none;
+}
+
+.projets h1 {
+	font-family: "Niagara Solid", sans-serif;
+	font-size: 5vw;
+	color: #faa916;
+	font-weight: 400;
+}
+
+/***/
+
+.projets_int {
+	display: flex;
+	gap: 40px;
+	justify-content: center;
+}
+
+.projets_int_inv {
+	display: flex;
+	gap: 40px;
+	justify-content: center;
+}
+
+.projets_description {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	width: 50%;
+}
+
+.iframe_video {
+	border: none;
+	width: 600px;
+	height: 300px;
+
+	object-fit: cover;
+}
+
+.projets_int h2 {
+	font-family: "Montserrat", sans-serif;
+	font-size: 30px;
+	color: #faa916;
+	font-weight: 400;
+}
+
+.projets_int_inv h2 {
+	font-family: "Montserrat", sans-serif;
+	font-size: 30px;
+	color: #faa916;
+	font-weight: 400;
+}
+
+.projets_int p {
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 400;
+	text-align: justify;
+}
+
+.projets_int_inv p {
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 400;
+	text-align: justify;
+}
+
+/*****/
+
+@media screen and (max-width: 1400px) {
+	.iframe_video {
+		width: 500px;
+		height: 270px;
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.projets_int {
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
+	}
+	.projets_description {
+		width: 100%;
+	}
+	.projets_int_inv {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.iframe_video {
+		width: 70vw;
+		height: 300px;
+	}
+
+	.projets {
+		gap: 35px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.projets h1 {
+		font-size: 7vw;
+	}
+
+	.projets h2 {
+		font-size: 24px;
+	}
+
+	.projets_int {
+		gap: 20px;
+	}
+
+	.projets_int_inv {
+		gap: 20px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.projets h1 {
+		font-size: 10vw;
+	}
+}
+
+/***********COMPETENCES*************/
+
+.competences {
+	width: 100%;
+	height: auto;
+	background-image: url("/border_white_bottom_bl.png"),
+		url("/background_white.jpg");
+
+	background-position: bottom, top;
+	background-repeat: no-repeat, repeat;
+	padding: 5vw 12vw;
+	display: flex;
+	flex-direction: column;
+	gap: 70px;
+	align-items: center;
+}
+
+.competences_title {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	justify-content: space-between;
+}
+
+.competences_title hr {
+	height: 4px;
+	width: 24vw;
+	background-color: #faa916;
+	border-style: none;
+}
+
+.competences h1 {
+	font-family: "Niagara Solid", sans-serif;
+	font-size: 5vw;
+	color: #faa916;
+	font-weight: 400;
+}
+
+.comp_images {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 70px;
+	justify-content: center;
+}
+
+.comp_images img {
+	height: 45px;
+	width: auto;
+}
+
+@media screen and (max-width: 1400px) {
+	.comp_images {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+		justify-content: center;
+	}
+	.comp_images img {
+		height: 35px;
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.competences h1 {
+		font-size: 7vw;
+	}
+
+	.comp_images {
+		gap: 40px;
+	}
+
+	.competences {
+		gap: 40px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.comp_images img {
+		height: 25px;
+		width: auto;
+	}
+	.comp_images {
+		gap: 25px;
+	}
+	.competences h1 {
+		font-size: 10vw;
+	}
+}
+@media screen and (max-width: 500px) {
+	.comp_images {
+		gap: 18px;
+	}
+}
+
+/*************** CONTACT ****************/
+
+.contact {
+	background-image: url("/background_projet.jpg");
+
+	background-position: center;
+
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+	padding: 8vw 15vw;
+}
+
+/****/
+
+.contact_title {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	justify-content: space-between;
+}
+
+.contact_title hr {
+	height: 4px;
+	width: 28vw;
+	background-color: #faa916;
+	border-style: none;
+}
+
+.contact h1 {
+	font-family: "Niagara Solid", sans-serif;
+	font-size: 5vw;
+	color: #faa916;
+	font-weight: 400;
+}
+
+/****/
+
+.contact article {
+	display: flex;
+	align-items: center;
+	gap: 45px;
+	margin-top: 20px;
+}
+.contact article img {
+	height: 7vw;
+	width: auto;
+}
+
+.contact article p {
+	color: white;
+	font-family: "Niagara Solid", sans-serif;
+	font-size: 100px;
+	font-weight: 400;
+}
+
+.contact_texte p {
+	font-family: "Montserrat", sans-serif;
+	font-size: 28px;
+	color: white;
+	font-weight: 300;
+	text-align: center;
+	line-height: 50px;
+}
+
+.contact_texte a {
+	color: #faa916;
+	text-decoration: none;
+}
+
+.contact_texte a:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+	.contact_texte p {
+		font-size: 22px;
+		line-height: 40px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.contact article {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.contact article img {
+		height: 12vw;
+	}
+
+	.contact h1 {
+		font-size: 7vw;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.contact article p {
+		font-size: 15vw;
+	}
+	.contact h1 {
+		font-size: 10vw;
+	}
+	.contact_texte p {
+		font-size: 4.5vw;
+		line-height: 8vw;
+	}
 }
